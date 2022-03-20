@@ -1,12 +1,12 @@
 import { useStore, useStoreMap } from "effector-react";
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import questionsApi from "../../api/questions";
-import AnswerItem from "../../components/Post/Answer/AnswerItem";
-import Question from "../../components/Post/Question/Question";
-import Loader from "../../components/UI/Loader";
-import { $questionAnswer, getQuestionAnswersFx } from "../../store/answers";
-import { $question, $questions, fetchQuestionFx } from "../../store/questions";
+import questionsApi from "../api/questions";
+import AnswerItem from "../components/Post/Answer/AnswerItem";
+import Question from "../components/Post/Question/Question";
+import Loader from "../components/UI/Loader";
+import { $questionAnswer, getQuestionAnswersFx } from "../store/answers";
+import { $question, $questions, fetchQuestionFx } from "../store/questions";
 
 const Post = () => {
     const navigate = useNavigate()

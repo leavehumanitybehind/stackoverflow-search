@@ -11,11 +11,12 @@ const MainTable = ({searchVal}) => {
     return (
         <>
         <Filter searchVal={searchVal} />
-        <Table thead={["Автор вопроса", "Тема", "Количество ответов", "Теги"]}>
-            {items && items.map(el => {
+        {items && items.length > 0 && <Table thead={["Автор вопроса", "Тема", "Количество ответов", "Теги"]}>
+            {items.map(el => {
                 return <TableItem key={el.question_id} data={el} />
             })}
-        </Table>
+        </Table>}
+        {items && !items.length && <p>Ничего не найдено...</p>}
         </>
     )
 }
