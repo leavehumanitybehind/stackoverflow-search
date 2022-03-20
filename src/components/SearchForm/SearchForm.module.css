@@ -1,0 +1,24 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 20px 40px;
+}
+.form input {
+  width: 100%;
+  padding: 20px;
+}
+
+.form button {
+  border: none;
+  padding: 10px 40px;
+  background-color: rgb(58, 58, 148);
+  color: white;
+}
+
+.form button:hover,
+.form button:active {
+  opacity: 0.6;
+}

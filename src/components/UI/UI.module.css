@@ -1,0 +1,122 @@
+.modalOverlay {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.modalContentWrapper {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 10%;
+  gap: 8px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 12px;
+  min-width: 800px;
+  width: auto;
+  max-height: 450px;
+  overflow-y: scroll;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.button {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+  right: 10px;
+  top: 10px;
+  padding: 0;
+  cursor: pointer;
+}
+.button::before,
+.button::after {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 20px;
+  background-color: #000;
+}
+
+.button::before {
+  transform: rotate(45deg) translate(9px, -7px);
+}
+.button::after {
+  top: 0px;
+  transform: rotate(315deg) translate(21px, -5px);
+}
+
+.button:hover {
+  opacity: 0, 6;
+}
+
+.table {
+  text-align: left;
+  background-color: #fff;
+  border-spacing: 0;
+  border-radius: 8px;
+  border-collapse: collapse;
+  border-color: grey;
+}
+.table thead {
+  background-color: rgb(178, 207, 231);
+}
+.table thead tr th {
+  border-bottom: 1px solid rgb(133, 131, 131);
+}
+
+.table tbody td {
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.table th,
+.table tbody td {
+  padding: 10px 5px;
+}
+.table tbody {
+  padding: 20px;
+}
+
+.table tbody tr:hover {
+  background-color: rgb(206, 221, 233);
+}
+
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: rgb(96, 209, 194) transparent #fff transparent;
+  animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
