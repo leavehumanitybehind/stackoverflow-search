@@ -1,7 +1,6 @@
 import { useStore, useStoreMap } from "effector-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import questionsApi from "../api/questions";
 import AnswerItem from "../components/Post/Answer/AnswerItem";
 import Question from "../components/Post/Question/Question";
 import Loader from "../components/UI/Loader";
@@ -10,7 +9,7 @@ import { $question, $questions, fetchQuestionFx } from "../store/questions";
 
 const Post = () => {
     const navigate = useNavigate()
-    const [search, setSearch] = useSearchParams();
+    const [search] = useSearchParams();
     const loading = useStore(getQuestionAnswersFx.pending)
     const { items } = useStore($questionAnswer)
     const questions = useStore($questions)
@@ -36,10 +35,12 @@ const Post = () => {
         if (!questions.items) {
             fetchQuestionFx(id)
         }
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     useEffect(() => {
         getQuestionAnswersFx(id)
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
