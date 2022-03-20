@@ -17,7 +17,7 @@ const UserQuestionsContent = ({author}) => {
             {topQuestions.items && topQuestions.items.map(({question_id, title, link}) => {
                 return (
                     <li key={question_id}>
-                        <a href={link} target="_blank">{title}</a>
+                        <a href={link} rel="noreferrer" target="_blank">{title}</a>
                     </li>
                 )
             })}

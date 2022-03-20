@@ -15,6 +15,7 @@ const Filter = ({ searchVal }) => {
     }
     useEffect(() => {
         if (searchVal) sortHandler()
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [sort, order])
 
 
